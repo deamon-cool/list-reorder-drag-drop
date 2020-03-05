@@ -33,6 +33,6 @@ body {
     padding: 10px 0 10px 30px;
     border-left: 8px solid white;
     margin-bottom: 2px;
-
+    cursor: grab;
 
 }
