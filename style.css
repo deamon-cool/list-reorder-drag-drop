@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 30%;
+    background-color: lightgreen;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 500px
+}
+
+.container h1 {
+    text-align: center;
+    color: green;
+}
+
+.container .list {
+    width: 100%;
+    background-color: yellowgreen;
+    padding: 2px;
+    border: 1px solid white
+}
+
+.container .list .item {
+    width: initial;
+    background-color: green;
+    color: white;
+    padding: 10px 0 10px 30px;
+    border-left: 8px solid white;
+    margin-bottom: 2px;
+
+
+}
