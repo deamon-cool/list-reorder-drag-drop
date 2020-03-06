@@ -20,9 +20,10 @@ list.addEventListener('dragover', (e) => {
 list.addEventListener('drop', (e) => {
     let itemId = e.dataTransfer.getData('application/my-app');
     let item = document.getElementById(itemId);
+    console.log(e);
 
     try {
-        if (e.target === null) {
+        if (e.target === list) {
             list.appendChild(item);
         } else {
             list.insertBefore(item, e.target);
