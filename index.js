@@ -1,9 +1,14 @@
 let items = document.querySelectorAll('.container .list .item');
 
 items.forEach((item) => {
-    item.addEventListener('dragstart', (e, item) => {
+    item.addEventListener('dragstart', (e) => {
         console.log('dragstart');
         e.dataTransfer.setData('application/my-app', e.target.id);
+        item.style.opacity = 0.3;
+    });
+
+    item.addEventListener('dragend', () => {
+        item.style.opacity = 1;
     });
 
 });
