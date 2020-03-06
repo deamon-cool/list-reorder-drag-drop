@@ -8,20 +8,23 @@ items.forEach((item) => {
 
     item.addEventListener('dragend', () => {
         item.style.opacity = 1;
+
+        list.style.padding = '2px';
     });
 
+});
+
+let container = document.querySelector('.container');
+container.addEventListener('dragover', (e) => {
+    if (e.target === container) {
+        list.style.padding = '2px 2px 40px 2px';
+    }
 });
 
 
 let list = document.querySelector('.container .list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
-
-    if (e.target === items[items.length - 1]) {
-        list.style.padding = '2px 2px 40px 2px';
-    } else {
-        list.style.padding = '2px';
-    }
 });
 
 list.addEventListener('drop', (e) => {
