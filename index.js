@@ -3,7 +3,7 @@ let items = document.querySelectorAll('.container .list .item');
 items.forEach((item) => {
     item.addEventListener('dragstart', (e, item) => {
         console.log('dragstart');
-        e.dataTransfer.setData('application/my-app', e.target);
+        e.dataTransfer.setData('application/my-app', e.target.id);
     });
 
 });
