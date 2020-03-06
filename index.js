@@ -12,15 +12,21 @@ items.forEach((item) => {
 
 });
 
+
 let list = document.querySelector('.container .list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
+
+    if (e.target === items[items.length - 1]) {
+        list.style.padding = '2px 2px 40px 2px';
+    } else {
+        list.style.padding = '2px';
+    }
 });
 
 list.addEventListener('drop', (e) => {
     let itemId = e.dataTransfer.getData('application/my-app');
     let item = document.getElementById(itemId);
-    console.log(e);
 
     try {
         if (e.target === list) {
