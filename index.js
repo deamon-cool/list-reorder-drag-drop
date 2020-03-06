@@ -22,7 +22,8 @@ list.addEventListener('dragover', (e) => {
 list.addEventListener('drop', (e) => {
     console.log('drop');
     let itemId = e.dataTransfer.getData('application/my-app');
+    let item = document.getElementById(itemId);
     console.log(itemId);
 
-    list.appendChild(document.getElementById(itemId));
+    list.appendChild(item);
 });
