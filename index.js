@@ -3,8 +3,9 @@ let items = document.querySelectorAll('.container .list .item');
 items.forEach((item) => {
     item.addEventListener('dragstart', (e, item) => {
         console.log('dragstart');
-        e.dataTransfer.setData('application/my-app', e.target); //application/my-app
+        e.dataTransfer.setData('application/my-app', e.target);
     });
+
 });
 
 let list = document.querySelector('.container .list');
@@ -17,5 +18,6 @@ list.addEventListener('drop', (e) => {
     console.log('drop');
     let item = e.dataTransfer.getData('application/my-app');
     console.log(item);
-    list.append(item);
+
+    list.appendChild(item);
 });
