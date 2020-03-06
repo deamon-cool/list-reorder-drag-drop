@@ -25,5 +25,13 @@ list.addEventListener('drop', (e) => {
     let item = document.getElementById(itemId);
     console.log(itemId);
 
-    list.appendChild(item);
+    try {
+        if (e.target === null) {
+            list.appendChild(item);
+        } else {
+            list.insertBefore(item, e.target);
+        }
+    } catch (err) {}
+
+
 });
