@@ -23,7 +23,6 @@ list.addEventListener('drop', (e) => {
     console.log('drop');
     let itemId = e.dataTransfer.getData('application/my-app');
     let item = document.getElementById(itemId);
-    console.log(itemId);
 
     try {
         if (e.target === null) {
