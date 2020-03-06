@@ -1,7 +1,7 @@
 let items = document.querySelectorAll('.container .list .item');
 
 items.forEach((item) => {
-    item.addEventListener('dragstart', (e, item) => {
+    item.addEventListener('dragstart', (e) => {
         console.log('dragstart');
         e.dataTransfer.setData('application/my-app', e.target);
     });
