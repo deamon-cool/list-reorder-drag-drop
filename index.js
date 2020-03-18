@@ -12,7 +12,6 @@ let list = document.querySelector('.list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
     console.log('dragover');
-    // console.log(e.target);
     updateOrder(draggedItem, e.target);
 });
 
@@ -23,7 +22,9 @@ list.addEventListener('drop', (e) => {
 
 
 function updateOrder(draggedItem, targetItem) {
-    if(targetItem.className === draggedItem.className){
+    if(targetItem.className === draggedItem.className) {
         list.insertBefore(draggedItem, targetItem);
+    } else {
+        list.appendChild(draggedItem);
     }
 }
