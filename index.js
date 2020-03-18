@@ -1,5 +1,4 @@
 let items = document.querySelectorAll('.list .item');
-
 let draggedItem;
 
 items.forEach((item) => {
@@ -13,6 +12,8 @@ let list = document.querySelector('.list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
     console.log('dragover');
+    // console.log(e.target);
+    updateOrder(draggedItem, e.target);
 });
 
 list.addEventListener('drop', (e) => {
@@ -20,6 +21,9 @@ list.addEventListener('drop', (e) => {
     updateOrder(draggedItem, e.target);
 });
 
+
 function updateOrder(draggedItem, targetItem) {
-    list.insertBefore(draggedItem, targetItem);
+    if(targetItem.className === draggedItem.className){
+        list.insertBefore(draggedItem, targetItem);
+    }
 }
