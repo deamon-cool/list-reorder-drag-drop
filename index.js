@@ -1,25 +1,25 @@
-let items = document.querySelectorAll('.container .list .item');
+let items = document.querySelectorAll('.list .item');
 
-console.log(items[1].id);
+let draggedItem;
 
 items.forEach((item) => {
     item.addEventListener('dragstart', (e) => {
         console.log('dragstart');
-        e.dataTransfer.setData('application/my-app', e.target.id);
+        draggedItem = e.target;
     });
-
-
 });
 
-let list = document.querySelector('.container .list');
+let list = document.querySelector('.list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
     console.log('dragover');
-    console.log(e);
 });
 
 list.addEventListener('drop', (e) => {
     console.log('drop');
-    let item = e.dataTransfer.getData('application/my-app');
-    console.log(item);
+    updateOrder(draggedItem, e.target);
 });
+
+function updateOrder(draggedItem, targetItem) {
+    list.insertBefore(draggedItem, targetItem);
+}
