@@ -12,16 +12,17 @@ let list = document.querySelector('.list');
 list.addEventListener('dragover', (e) => {
     e.preventDefault();
     console.log('dragover');
-    updateOrder(draggedItem, e.target);
+    // updateOrder(e.target, draggedItem);
 });
 
 list.addEventListener('drop', (e) => {
     console.log('drop');
-    updateOrder(draggedItem, e.target);
+    setOrder(e.target, draggedItem);
 });
 
 
-function updateOrder(draggedItem, targetItem) {
+
+function setOrder(targetItem, draggedItem) {
     if(targetItem.className === draggedItem.className) {
         list.insertBefore(draggedItem, targetItem);
     } else {
