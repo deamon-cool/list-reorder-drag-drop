@@ -5,6 +5,12 @@ items.forEach((item) => {
     item.addEventListener('dragstart', (e) => {
         console.log('dragstart');
         draggedItem = e.target;
+        draggedItem.style.opacity = '0.2';
+    });
+
+    item.addEventListener('dragend', (e) => {
+        draggedItem.style.opacity = '1';
+        console.log(list);
     });
 
 });
