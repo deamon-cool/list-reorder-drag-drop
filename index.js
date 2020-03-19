@@ -44,7 +44,7 @@ function addItemsListeners(items) {
         item.addEventListener('dragend', (e) => {
             saveOrderToStorage(list);
 
-            draggedItem.style.opacity = '1';
+            draggedItem.style.opacity = '';
         });
 
     });
