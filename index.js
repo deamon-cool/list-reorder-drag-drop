@@ -1,14 +1,24 @@
+let list = document.querySelector('.list');
+list.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    console.log('dragover');
+    updateOrder(e.target, draggedItem);
+});
+
+
 for(let i = 0; i < localStorage.length; i++) {
-    console.log(i, localStorage[i]);
+    let temp = localStorage[i].split(':');
+    let id = temp[0];
+    let text = temp[1];
+
+    let div = document.createElement('div');
+    div.setAttribute('id', id);
+    div.setAttribute('class', 'item');
+    div.setAttribute('draggable', 'true');
+    div.textContent = text;
+
+    list.appendChild(div);
 }
-
-// read from Storage
-// read id
-// read text content
-// read position
-// sort by the position ?
-// create each div.item in div.list
-
 
 let items = document.querySelectorAll('.list .item');
 let draggedItem;
@@ -25,14 +35,6 @@ items.forEach((item) => {
         saveOrder(list);
     });
 
-});
-
-
-let list = document.querySelector('.list');
-list.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    console.log('dragover');
-    updateOrder(e.target, draggedItem);
 });
 
 
